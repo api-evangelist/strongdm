@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.strongdm.com/ (API authentication) and the SDK READMEs
+description: >-
+  StrongDM Admin API authentication. The control-plane API is gRPC; requests are
+  authenticated with an API access key plus secret key pair generated in the
+  Admin UI, and each request is signed. There is no OAuth 2.0 / OpenID Connect
+  authorization-server surface on the API — the SDKs handle key-based signing
+  internally, so there is no scope model (scopes/ is intentionally absent).
+summary:
+  types: [apiKey]
+  api_key_in: [signed-request]
+  oauth2_flows: []
+schemes:
+- name: apiKeyPair
+  type: apiKey
+  in: header
+  description: >-
+    API access key + secret key. The access key is a hex-format identifier
+    (e.g. auth-0123abcd...); the secret is a paired string. Both are issued when
+    an API key is created in the Admin UI and are supplied to the SDK via the
+    SDM_API_ACCESS_KEY and SDM_API_SECRET_KEY environment variables. The SDK
+    signs each gRPC request; the secret is never sent on the wire directly.
+  env:
+    access_key: SDM_API_ACCESS_KEY
+    secret_key: SDM_API_SECRET_KEY
+  sources: [docs.strongdm.com, github.com/strongdm/strongdm-sdk-python]
+notes: >-
+  Human access to resources is authenticated separately through the sdm client
+  and the organization's SSO/identity provider; this profile covers the Admin
+  API used for automation.

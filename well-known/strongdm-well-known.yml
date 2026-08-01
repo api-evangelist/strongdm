@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: searched
+description: >-
+  Probe of the /.well-known/ discovery surface across StrongDM's public hosts.
+  The marketing (www) and docs hosts return 404 for every path. The control
+  plane (app.strongdm.com) returns HTTP 200 for every /.well-known/ path, but
+  the body is the single-page-app HTML shell (Content-Type text/html), NOT a
+  genuine discovery document — i.e. a soft-404 catch-all. No real security.txt,
+  OIDC discovery, OAuth authorization-server metadata, api-catalog, or
+  ai-plugin.json is published. Recorded as absent; no WellKnown/SecurityTxt
+  pointer emitted.
+hosts:
+- host: https://app.strongdm.com
+  documents:
+  - {path: /.well-known/security.txt, status: 200, real: false, note: SPA HTML shell (soft-404)}
+  - {path: /.well-known/openid-configuration, status: 200, real: false, note: SPA HTML shell (soft-404)}
+  - {path: /.well-known/oauth-authorization-server, status: 200, real: false, note: SPA HTML shell (soft-404)}
+  - {path: /.well-known/api-catalog, status: 200, real: false, note: SPA HTML shell (soft-404)}
+  - {path: /.well-known/ai-plugin.json, status: 200, real: false, note: SPA HTML shell (soft-404)}
+- host: https://www.strongdm.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404, real: false}
+  - {path: /.well-known/openid-configuration, status: 404, real: false}
+  - {path: /.well-known/oauth-authorization-server, status: 404, real: false}
+  - {path: /.well-known/api-catalog, status: 404, real: false}
+  - {path: /.well-known/ai-plugin.json, status: 404, real: false}
+- host: https://docs.strongdm.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404, real: false}
+  - {path: /.well-known/openid-configuration, status: 404, real: false}
+  - {path: /.well-known/oauth-authorization-server, status: 404, real: false}
+  - {path: /.well-known/api-catalog, status: 404, real: false}
+  - {path: /.well-known/ai-plugin.json, status: 404, real: false}

@@ -1,0 +1,44 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.strongdm.com/ and the first-party SDK documentation
+description: >-
+  Cross-cutting request/response conventions of the StrongDM Admin API. The
+  control plane is gRPC; developers interact through first-party SDKs that wrap
+  gRPC + request signing with REST-like ergonomics. These are the runtime
+  semantics that apply across every operation.
+base_url: https://app.strongdm.com
+regions:
+  us: app.strongdm.com
+  uk: app.uk.strongdm.com
+  eu: app.eu.strongdm.com
+api_style: gRPC control-plane API, accessed through REST-principled SDKs (Go, Java, Python, Ruby, C#)
+authentication:
+  scheme: API access key + secret key, signed per request
+  detail: authentication/strongdm-authentication.yml
+idempotency:
+  supported: false
+  notes: >-
+    StrongDM does not document a client-supplied idempotency-key header for the
+    Admin API. Create operations are managed through the SDKs; no idempotency
+    contract is published.
+pagination:
+  style: sdk-managed
+  notes: >-
+    Read operations that return multiple results are automatically paginated by
+    the SDK. Ruby exposes transparent iterators; Go requires an explicit
+    iterator loop. There is no client-visible cursor/offset parameter to set
+    manually — the SDK follows pages internally.
+rate_limiting:
+  detail: rate-limits/strongdm-rate-limits.yml
+  per_user: {read: 5000, write: 500, window: minute}
+  per_organization: {read: 50000, write: 5000, window: minute}
+  on_exceed: Requests fail; SDKs automatically pause and retry.
+versioning:
+  scheme: sdk-semver
+  notes: >-
+    The API surface is versioned through the SDK major version line (17.x as of
+    July 2026); the control plane evolves continuously with backwards
+    compatibility maintained across SDK generations.
+errors:
+  transport: gRPC status codes surfaced by each SDK as language-native exceptions/errors
+  detail: null

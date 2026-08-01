@@ -1,0 +1,30 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://status.strongdm.com/, https://docs.strongdm.com/ (changelog / release
+  notes), and the SDK release history on the package registries.
+versioning:
+  scheme: sdk-semver
+  current: '17'
+  mechanism: SDK major version line (17.x); control plane evolves continuously
+  docs: https://docs.strongdm.com/
+  notes: >-
+    StrongDM ships lockstep SDK versions (Go v17, Python/Ruby 17.8.0 as of July
+    2026) generated from the same API definition. The API is not versioned via a
+    URL path or version header exposed to callers.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: >-
+    No formal RFC 8594 Sunset/Deprecation-header policy is published; API
+    evolution is tracked through the changelog and SDK major versions.
+status_page: https://status.strongdm.com/
+status_components:
+  regions: [US, UK, EU]
+  monitored: [Control Plane, Admin UI, API]
+changelog: https://docs.strongdm.com/
+rate_limits: rate-limits/strongdm-rate-limits.yml
+sla:
+  url: null
+  public_uptime_target: null
+  notes: Status page reports 100% uptime over trailing 90 days; no public numeric SLA published for standard accounts.

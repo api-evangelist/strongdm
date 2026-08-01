@@ -1,0 +1,24 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.strongdm.com/ (Changelog and Release Notes) and the SDK release registries
+description: >-
+  StrongDM publishes a dated Changelog and Release Notes on its documentation
+  site, and ships lockstep SDK releases across languages. The docs changelog is
+  the authoritative source of recent entries; this artifact records the scheme
+  and the concrete current SDK release rather than fabricating undated entries.
+scheme: dated
+changelog_url: https://docs.strongdm.com/
+release_notes_url: https://docs.strongdm.com/
+current_sdk_version: 17.8.0
+sdk_release_cadence: >-
+  Lockstep major/minor releases across the Go, Java, Python, Ruby, and C# SDKs,
+  generated from the same API definition.
+entries:
+- version: 17.8.0
+  date: '2026-07-01'
+  channel: sdk
+  highlights: Python and Ruby SDKs released at 17.8.0 (latest lockstep SDK line).
+notes: >-
+  The documentation Changelog/Release Notes list dated product entries but do
+  not attach version numbers to each heading; recent entries were not captured
+  verbatim to avoid fabrication. Consult the live changelog for the full list.

@@ -1,0 +1,38 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.strongdm.com/
+description: >-
+  The sdm command-line client — the local StrongDM client that authenticates a
+  user, brokers connections to resources, and exposes administrative and audit
+  helpers. The binary itself is catalogued in packages/strongdm-packages.yml;
+  this artifact enumerates its command surface. sdm is the end-user/operator
+  client; bulk automation of the control plane is done through the SDKs.
+docs: https://docs.strongdm.com/
+install:
+  admin_ui: Download the client installer from the StrongDM Admin UI
+  desktop: Install StrongDM Desktop (macOS, Linux, Windows)
+  verify: sdm --version
+commands:
+  session:
+  - {name: login, description: Log in to the local StrongDM client.}
+  - {name: logout, description: Log out of the local StrongDM client.}
+  - {name: status, description: List resources and their connection status.}
+  - {name: connect, description: Open a local port to a resource.}
+  - {name: disconnect, description: Disconnect from a resource.}
+  - {name: ssh, description: Connect to an SSH server through StrongDM.}
+  - {name: ready, description: Report whether the local listener is ready.}
+  admin_audit:
+  - {name: admin, description: Administrative commands for the organization.}
+  - {name: audit, description: Administrative audit commands (access, activity, resources).}
+  - {name: replay, description: Replay recorded sessions.}
+  - {name: relay, description: Run a relay/gateway node that listens for node connections.}
+  platform:
+  - {name: aws, description: AWS helper commands.}
+  - {name: kubernetes, alias: k8s, description: Operate the local Kubernetes configuration.}
+  - {name: crypto, description: Encryption-related helpers.}
+  - {name: profile, description: Apply an sdm profile.}
+  - {name: lock, description: Lock the local client.}
+  - {name: unlock, description: Unlock the local client.}
+  diagnostics:
+  - {name: doctor, description: Run local system checks.}
+  - {name: help, description: List commands or show help for a command.}

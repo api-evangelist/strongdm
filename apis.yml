@@ -1,8 +1,16 @@
 aid: strongdm
 name: StrongDM
-description: StrongDM is a company surfaced as a portfolio company of bloomberg-beta, dcvc, gv, tiger-global
-  and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the
-  enrichment pipeline.
+description: >-
+  StrongDM is a Zero Trust Privileged Access Management (PAM) platform that
+  brokers and governs access to infrastructure — databases, servers, Kubernetes
+  clusters, cloud resources, network devices, and internal web apps — through a
+  central control plane. It enforces policy and authorization continuously with
+  adaptive action controls, full session recording and audit, and no standing
+  privileges. Automation is exposed through the StrongDM Admin API, a
+  gRPC-based control-plane API that first-party SDKs (Go, Java, Python, Ruby,
+  C#) wrap with REST-like ergonomics and request signing, plus a Terraform
+  provider and the sdm command-line client. This profile was enriched by the
+  API Evangelist pipeline from StrongDM's public developer surface.
 url: https://raw.githubusercontent.com/api-evangelist/strongdm/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -13,17 +21,110 @@ x-backed-by:
 - tiger-global
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 12
+  pass: local-v1
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://www.strongdm.com/hubfs/strongdm-logo.svg
 tags:
 - Company
-apis: []
+- Security
+- Privileged Access Management
+- Zero Trust
+- Access Management
+- Identity
+- Infrastructure
+- Audit
+- Compliance
+- DevOps
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: StrongDM Admin API
+  description: >-
+    The StrongDM control-plane API for automating management of resources,
+    accounts, roles, access grants, gateways, relays, secret stores, and audit
+    logs. The transport is gRPC with request signing; StrongDM ships first-party
+    SDKs (Go, Java, Python, Ruby, C#) that wrap it with REST-like ergonomics and
+    handle signing, retries, and pagination. Authentication is an API access key
+    plus secret key generated in the Admin UI.
+  humanURL: https://docs.strongdm.com/
+  baseURL: https://app.strongdm.com
+  tags:
+  - Privileged Access Management
+  - Access Management
+  - Audit
+  - Security
+  properties:
+  - type: Documentation
+    url: https://docs.strongdm.com/
+  - type: APIReference
+    url: https://docs.strongdm.com/
 common:
+- type: TrustCenter
+  url: security/strongdm-trust-center.yml
+- type: DomainSecurity
+  url: security/strongdm-domain-security.yml
 - type: Website
-  url: http://www.strongdm.com/
+  url: https://www.strongdm.com/
+- type: DeveloperPortal
+  url: https://docs.strongdm.com/
+- type: Documentation
+  url: https://docs.strongdm.com/
+- type: APIReference
+  url: https://docs.strongdm.com/
+- type: GettingStarted
+  url: https://docs.strongdm.com/
+- type: Blog
+  url: https://www.strongdm.com/blog
+- type: Pricing
+  url: https://www.strongdm.com/pricing
+- type: Support
+  url: https://www.strongdm.com/contact
+- type: SignUp
+  url: https://app.strongdm.com/app/login
+- type: GitHubOrganization
+  url: https://github.com/strongdm
+- type: StatusPage
+  url: https://status.strongdm.com/
+- type: Packages
+  url: packages/strongdm-packages.yml
+- type: SDKs
+  url: packages/strongdm-packages.yml
+- type: CLI
+  url: cli/strongdm-cli.yml
+- type: Authentication
+  url: authentication/strongdm-authentication.yml
+- type: Conventions
+  url: conventions/strongdm-conventions.yml
+- type: RateLimits
+  url: rate-limits/strongdm-rate-limits.yml
+- type: Lifecycle
+  url: lifecycle/strongdm-lifecycle.yml
+- type: ChangeLog
+  url: changelog/strongdm-changelog.yml
+- type: Conformance
+  url: conformance/strongdm-conformance.yml
+- type: Compliance
+  url: https://security.strongdm.com/
+- type: LLMsTxt
+  url: llms/strongdm-llms.txt

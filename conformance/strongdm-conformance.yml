@@ -1,0 +1,39 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://security.strongdm.com/ (Trust Center), https://www.strongdm.com/
+  and https://docs.strongdm.com/. Compliance certifications verified against the
+  StrongDM Trust Center; API/transport standards from the SDK documentation.
+description: >-
+  Standards and compliance posture StrongDM asserts for its platform and Admin
+  API. Compliance certifications reflect StrongDM's own audited programs (see
+  security/strongdm-trust-center.yml); protocol conformance is derived from the
+  gRPC control-plane API and its SDKs.
+standards:
+- id: soc2-type2
+  conforms: true
+  evidence: StrongDM Trust Center (security.strongdm.com) lists SOC 2
+- id: pci-dss
+  conforms: true
+  evidence: StrongDM Trust Center lists PCI DSS
+- id: gdpr
+  conforms: true
+  evidence: StrongDM Trust Center lists GDPR
+- id: grpc
+  conforms: true
+  evidence: Admin API transport is gRPC (SDKs wrap gRPC + signing)
+- id: zero-trust
+  conforms: true
+  evidence: Platform positioned as Zero Trust Privileged Access Management (CISA ZTMM aligned)
+- id: oauth2
+  conforms: false
+  evidence: API uses signed access-key/secret-key auth, not OAuth 2.0
+- id: openid-connect
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: gRPC status codes, not RFC 9457 HTTP problem+json
+- id: scim
+  conforms: false
+- id: fhir-r4
+  conforms: false

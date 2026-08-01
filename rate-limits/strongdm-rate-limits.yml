@@ -1,0 +1,42 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+provider: StrongDM
+providerId: strongdm
+generated: '2026-07-21'
+created: '2026-07-21'
+modified: '2026-07-21'
+method: searched
+source: https://docs.strongdm.com/ (API rate limits)
+tags:
+- Rate Limiting
+- Privileged Access Management
+description: >-
+  StrongDM Admin API rate limits, enforced per user and per organization on a
+  per-minute basis, separately for read and write operations. Requests that
+  exceed a limit fail; the SDKs can automatically pause and retry.
+responseCodes:
+  throttled: 429
+limits:
+- name: Read requests (per user)
+  scope: user
+  metric: requests_per_minute
+  limit: 5000
+  timeFrame: minute
+- name: Write requests (per user)
+  scope: user
+  metric: requests_per_minute
+  limit: 500
+  timeFrame: minute
+- name: Read requests (per organization)
+  scope: organization
+  metric: requests_per_minute
+  limit: 50000
+  timeFrame: minute
+- name: Write requests (per organization)
+  scope: organization
+  metric: requests_per_minute
+  limit: 5000
+  timeFrame: minute
+notes: >-
+  Limits captured from StrongDM's API documentation. SDKs implement automatic
+  backoff/retry when a limit is hit.

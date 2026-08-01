@@ -1,0 +1,64 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://github.com/strongdm and the public package registries (PyPI,
+  RubyGems, pkg.go.dev, Maven Central). All five language SDKs, the Terraform
+  provider, and the sdm CLI are first-party (published under the strongdm org,
+  Apache-2.0 / MPL-2.0). The Admin API transport is gRPC; each SDK wraps it with
+  REST-like ergonomics plus request signing.
+description: >-
+  First-party StrongDM client libraries and tooling. The SDKs share a lockstep
+  version line (17.x as of July 2026) generated from the same API definition.
+packages:
+- language: go
+  registry: go
+  name: github.com/strongdm/strongdm-sdk-go
+  url: https://pkg.go.dev/github.com/strongdm/strongdm-sdk-go
+  source: https://github.com/strongdm/strongdm-sdk-go
+  install: go get github.com/strongdm/strongdm-sdk-go/v17
+  latest_major: v17
+  official: true
+- language: python
+  registry: pypi
+  name: strongdm
+  url: https://pypi.org/project/strongdm/
+  source: https://github.com/strongdm/strongdm-sdk-python
+  install: pip install strongdm
+  version: 17.8.0
+  official: true
+- language: ruby
+  registry: rubygems
+  name: strongdm
+  url: https://rubygems.org/gems/strongdm
+  source: https://github.com/strongdm/strongdm-sdk-ruby
+  install: gem install strongdm
+  version: 17.8.0
+  official: true
+- language: java
+  registry: maven
+  name: com.strongdm.api:strongdm
+  url: https://central.sonatype.com/artifact/com.strongdm.api/strongdm
+  source: https://github.com/strongdm/strongdm-sdk-java
+  install: 'implementation "com.strongdm.api:strongdm:+"'
+  official: true
+- language: csharp
+  registry: null
+  name: strongdm-sdk-csharp
+  url: https://github.com/strongdm/strongdm-sdk-csharp
+  source: https://github.com/strongdm/strongdm-sdk-csharp
+  official: true
+  note: >-
+    Distributed via GitHub source (Apache-2.0). No first-party NuGet package
+    confirmed at nuget.org/packages/StrongDM at fetch time (404).
+tools:
+- kind: terraform-provider
+  name: strongdm/sdm
+  url: https://registry.terraform.io/providers/strongdm/sdm
+  source: https://github.com/strongdm/terraform-provider-sdm
+  official: true
+- kind: cli
+  name: sdm
+  url: https://docs.strongdm.com/
+  install: Download from the Admin UI or StrongDM Desktop (macOS/Linux/Windows)
+  detail: cli/strongdm-cli.yml
+  official: true
