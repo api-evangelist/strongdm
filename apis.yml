@@ -151,9 +151,11 @@ common:
 
 apis:
 - name: StrongDM Admin API
-  description: The StrongDM control-plane API for automating management of resources, accounts, roles, access grants, gateways, relays, secret
-    stores, and audit logs. The transport is gRPC with request signing; StrongDM ships first-party SDKs (Go, Java, Python, Ruby, C#) that wrap
-    it with REST-like ergonomics and handle signing, retries, and pagination. Authentication is an API access key plus secret key generated in
+  description: >-
+    The StrongDM control-plane API for automating management of resources, accounts, roles, access grants,
+    gateways, relays, secret stores, and audit logs. The transport is gRPC with request signing; StrongDM
+    ships first-party SDKs (Go, Java, Python, Ruby, C#) that wrap it with REST-like ergonomics and handle
+    signing, retries, and pagination. Authentication is an API access key plus secret key generated in
     the Admin UI.
   humanURL: https://docs.strongdm.com/
   baseURL: https://app.strongdm.com
@@ -179,16 +181,16 @@ apis:
   - type: GraphQL
     url: https://app.strongdm.com/graphql
   aid: strongdm:strongdm-graphql-api
-- aid: strongdm:strongdm-api
-  name: StrongDM API
-  description: 'StrongDM API as documented publicly: 4 operations. Contract generated from the documentation by API Evangelist (2026-10-04); not
-
-    the provider''s own document.'
-  humanURL: https://docs.strongdm.com/references/api/api-keys.md
+- aid: strongdm:strongdm-admin-api
+  name: StrongDM Admin API
+  description: The Admin API from StrongDM — 4 operation(s) for admin.
+  humanURL: https://docs.strongdm.com/
+  baseURL: https://app.strongdm.com
+  tags:
+  - Admin
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/strongdm-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/strongdm-admin-api-openapi.yml
   - type: JSONSchema
     url: json-schema/strongdm-get-admin-resources-resourceid-response-schema.json
 x-enrichment:

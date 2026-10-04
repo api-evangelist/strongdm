@@ -1,0 +1,18 @@
+{
+  "provider": "strongdm",
+  "sources": [
+    "_ae-authored/strongdm-openapi-generated.yml"
+  ],
+  "outputs": [
+    "strongdm-admin-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "strongdm-openapi-generated.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: written (+1 apis, 3 total)"
+  ],
+  "skipped": []
+}
