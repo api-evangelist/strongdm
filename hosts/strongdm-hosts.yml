@@ -1,0 +1,160 @@
+generated: '2026-10-04'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 10
+  own: 8
+  other_domain: 1
+  platform: 1
+  roles:
+  - api
+  - docs
+  - identity
+  - other
+  - portal
+  - source
+  - status
+  - support
+  - website
+hosts:
+- host: api.strongdm.com
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: strongdm.com
+  role: api
+  relation: own
+- host: app.strongdm.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types:
+  - SignUp
+  serves:
+  - api
+  - docs
+  registrable_domain: strongdm.com
+  role: identity
+  relation: own
+- host: discover.strongdm.com
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: strongdm.com
+  role: other
+  relation: own
+- host: docs.pagerduty.com
+  found_by:
+  - docs-index
+  types: []
+  serves:
+  - docs
+  registrable_domain: pagerduty.com
+  role: docs
+  relation: other-domain
+- host: docs.strongdm.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - site-links
+  - docs-index
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - DeveloperPortal
+  - Documentation
+  - APIReference
+  - GettingStarted
+  serves:
+  - docs
+  - documentation
+  - hosting
+  vendor: gitbook
+  registrable_domain: strongdm.com
+  role: portal
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: help.strongdm.com
+  found_by:
+  - probed
+  - site-links
+  - docs-index
+  - well-known
+  types: []
+  serves:
+  - docs
+  registrable_domain: strongdm.com
+  role: support
+  relation: own
+- host: security.strongdm.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Compliance
+  serves: []
+  registrable_domain: strongdm.com
+  role: other
+  relation: own
+- host: status.strongdm.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types:
+  - StatusPage
+  serves: []
+  registrable_domain: strongdm.com
+  role: status
+  relation: own
+- host: www.strongdm.com
+  found_by:
+  - pointer
+  - probed
+  - docs-index
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - TermsOfService
+  - Security
+  - Newsroom
+  - Leadership
+  - Website
+  - Blog
+  - Pricing
+  - Support
+  - PrivacyPolicy
+  serves:
+  - docs
+  - cdn
+  - hosting
+  vendor: cloudflare
+  registrable_domain: strongdm.com
+  role: website
+  relation: own

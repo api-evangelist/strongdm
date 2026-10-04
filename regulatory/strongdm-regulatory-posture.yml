@@ -1,0 +1,32 @@
+generated: '2026-10-04'
+method: searched
+source: https://www.strongdm.com/privacy
+signals:
+  data_subject_request:
+    - evidence:
+        - source: https://www.strongdm.com/privacy
+          http_status: 200
+          fetched: true
+          quote: "Under certain circumstances and in compliance with the GDPR, you may have the right to: Request access to your personal information (commonly known as ‘subject access request’). ... Request correction of the personal information that we hold about you. ... Request erasure of your personal information."
+          note: Provides data subject rights for access, correction, and erasure.
+  data_retention:
+    - evidence:
+        - source: https://www.strongdm.com/privacy
+          http_status: 200
+          fetched: true
+          quote: "We will only retain your personal information for as long as necessary to fulfill the purposes for which we collected it. To determine the appropriate retention period for personal information, we consider the amount, nature, and sensitivity of that information, the potential risk of harm from unauthorized use or disclosure, the purposes for which we process your personal information and whether we can achieve those purposes through other means, and the applicable legal requirements."
+          note: Describes retention period policy.
+  subprocessors:
+    - evidence:
+        - source: https://www.strongdm.com/privacy
+          http_status: 200
+          fetched: true
+          quote: "We may provide to third parties non-personal information, including where such information is combined with similar information of other users of the Site. ... We may employ independent contractors, vendors and suppliers (collectively, “Outside Contractors”) to provide specific services and products related to the Site... In the course of providing products or services to us, these Outside Contractors may have access to your information collected through the Site, including your personal information."
+          note: Lists use of third parties and contractors as subprocessors.
+  data_residency:
+    - evidence:
+        - source: https://www.strongdm.com/privacy
+          http_status: 200
+          fetched: true
+          quote: "Your personal information collected on the Site may be transferred from time to time to our personnel, or to third parties, located throughout the world... By using the Site and submitting such information on it, you voluntarily consent to the trans‑border transfer and hosting of such information."
+          note: Addresses cross‑border data transfers.

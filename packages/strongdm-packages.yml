@@ -1,14 +1,10 @@
 generated: '2026-07-21'
 method: searched
-source: >-
-  https://github.com/strongdm and the public package registries (PyPI,
-  RubyGems, pkg.go.dev, Maven Central). All five language SDKs, the Terraform
-  provider, and the sdm CLI are first-party (published under the strongdm org,
-  Apache-2.0 / MPL-2.0). The Admin API transport is gRPC; each SDK wraps it with
-  REST-like ergonomics plus request signing.
-description: >-
-  First-party StrongDM client libraries and tooling. The SDKs share a lockstep
-  version line (17.x as of July 2026) generated from the same API definition.
+source: https://github.com/strongdm and the public package registries (PyPI, RubyGems, pkg.go.dev, Maven Central). All five language SDKs, the
+  Terraform provider, and the sdm CLI are first-party (published under the strongdm org, Apache-2.0 / MPL-2.0). The Admin API transport is gRPC;
+  each SDK wraps it with REST-like ergonomics plus request signing.
+description: First-party StrongDM client libraries and tooling. The SDKs share a lockstep version line (17.x as of July 2026) generated from the
+  same API definition.
 packages:
 - language: go
   registry: go
@@ -26,6 +22,7 @@ packages:
   install: pip install strongdm
   version: 17.8.0
   official: true
+  ownership_audit: metadata names strongdm.com
 - language: ruby
   registry: rubygems
   name: strongdm
@@ -33,23 +30,22 @@ packages:
   source: https://github.com/strongdm/strongdm-sdk-ruby
   install: gem install strongdm
   version: 17.8.0
-  official: true
+  official: false
+  ownership_audit: 'registry metadata names neither the provider''s domain nor its GitHub org: official downgraded (harvest-packages.py --audit)'
 - language: java
   registry: maven
   name: com.strongdm.api:strongdm
   url: https://central.sonatype.com/artifact/com.strongdm.api/strongdm
   source: https://github.com/strongdm/strongdm-sdk-java
-  install: 'implementation "com.strongdm.api:strongdm:+"'
+  install: implementation "com.strongdm.api:strongdm:+"
   official: true
 - language: csharp
-  registry: null
+  registry: ""
   name: strongdm-sdk-csharp
   url: https://github.com/strongdm/strongdm-sdk-csharp
   source: https://github.com/strongdm/strongdm-sdk-csharp
   official: true
-  note: >-
-    Distributed via GitHub source (Apache-2.0). No first-party NuGet package
-    confirmed at nuget.org/packages/StrongDM at fetch time (404).
+  note: Distributed via GitHub source (Apache-2.0). No first-party NuGet package confirmed at nuget.org/packages/StrongDM at fetch time (404).
 tools:
 - kind: terraform-provider
   name: strongdm/sdm
