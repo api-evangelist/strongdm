@@ -53,7 +53,7 @@ x-enrichment:
   artifacts_added: 12
   pass: local-v1
 created: '2026-07-17'
-modified: '2026-07-21'
+modified: '2026-10-06'
 image: https://www.strongdm.com/hubfs/strongdm-logo.svg
 tags:
 - Company
@@ -93,6 +93,8 @@ apis:
   - type: APIReference
     url: https://docs.strongdm.com/
 common:
+- url: https://discover.strongdm.com/blog/rss.xml
+  type: BlogRSS
 - type: TrustCenter
   url: security/strongdm-trust-center.yml
 - type: DomainSecurity
