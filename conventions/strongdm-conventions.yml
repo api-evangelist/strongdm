@@ -16,6 +16,7 @@ authentication:
   scheme: API access key + secret key, signed per request
   detail: authentication/strongdm-authentication.yml
 idempotency:
+  coverage: none
   supported: false
   notes: >-
     StrongDM does not document a client-supplied idempotency-key header for the

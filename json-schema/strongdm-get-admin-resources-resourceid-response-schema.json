@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/strongdm/main/json-schema/strongdm-get-admin-resources-resourceid-response-schema.json",
+  "title": "GetAdminResourcesResourceidResponse",
+  "x-generated": "2026-10-04",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/strongdm-openapi-generated.yml#/components/schemas/GetAdminResourcesResourceidResponse",
+  "type": "object",
+  "properties": {
+    "content": {
+      "type": "string",
+      "description": "The direct answer to the question with relevant excerpts and sources from the documentation."
+    }
+  }
+}

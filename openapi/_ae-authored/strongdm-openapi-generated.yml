@@ -1,0 +1,180 @@
+openapi: 3.1.0
+info:
+  title: StrongDM API
+  version: '2026-10-04'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-04: 4 operation(s) read from 25 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; StrongDM has published no machine-readable contract that the
+    pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 4
+    pages-with-code: 0
+    pages-read: 25
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-04'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.strongdm.com/references/api/api-keys.md
+  - https://docs.strongdm.com/admin/resources/discovery.md
+  - https://docs.strongdm.com/admin/resources/clouds/gcp.md
+  - https://docs.strongdm.com/admin/resources/resource-lock.md
+  - https://docs.strongdm.com/admin/resources/import-resources.md
+  - https://docs.strongdm.com/admin/resources/datasources/presto.md
+  - https://docs.strongdm.com/admin/resources/datasources/clickhouse.md
+  - https://docs.strongdm.com/admin/resources/clouds.md
+  - https://docs.strongdm.com/admin/resources/servers.md
+  - https://docs.strongdm.com/admin/resources/clusters.md
+  - https://docs.strongdm.com/admin/resources/websites.md
+  - https://docs.strongdm.com/admin/resources/clouds/aws.md
+  - https://docs.strongdm.com/admin/resources/clouds/okta.md
+  - https://docs.strongdm.com/admin/resources/datasources.md
+  - https://docs.strongdm.com/admin/resources/servers/rdp.md
+  - https://docs.strongdm.com/admin/resources/clouds/azure.md
+  - https://docs.strongdm.com/admin/resources/clusters/aks.md
+  - https://docs.strongdm.com/admin/resources/clusters/eks.md
+  - https://docs.strongdm.com/admin/resources/clusters/gke.md
+  - https://docs.strongdm.com/admin/resources/clouds/gcp-wif.md
+  - https://docs.strongdm.com/admin/resources/port-overrides.md
+  - https://docs.strongdm.com/admin/resources/servers/rawtcp.md
+  - https://docs.strongdm.com/admin/resources/clouds/snowsight.md
+  - https://docs.strongdm.com/admin/resources/datasources/db2i.md
+  - https://docs.strongdm.com/admin/resources/rotate-passwords.md
+paths:
+  /admin/resources/clouds/aws.md:
+    get:
+      operationId: get_admin_resources_clouds_aws_md
+      tags:
+      - Admin
+      summary: AWS Cloud
+      x-source: https://docs.strongdm.com/admin/resources/clouds/aws.md
+      parameters:
+      - name: ask
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The immediate question: it should be specific, self-contained, and written in natural language.'
+      - name: goal
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Optional broader end goal describing what you ultimately want to accomplish.
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /admin/resources/clusters/{clusterid}:
+    get:
+      operationId: get_admin_resources_clusters_clusterid
+      tags:
+      - Admin
+      summary: Learn how to add and manage an Amazon EKS (Elastic Kubernetes Service) cluster in StrongDM.
+      x-source: https://docs.strongdm.com/admin/resources/clusters/eks.md
+      parameters:
+      - name: clusterid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: ask
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The immediate question; should be specific, self‑contained, and written in natural language.
+      - name: goal
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Optional broader end goal describing what the user ultimately wants to accomplish.
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+        collapsed_from: 2 example path(s) differing only at clusterId
+  /admin/resources/datasources/db2i.md:
+    get:
+      operationId: get_admin_resources_datasources_db2i_md
+      tags:
+      - Admin
+      summary: Learn how to add Db2i as a datasource in StrongDM.
+      x-source: https://docs.strongdm.com/admin/resources/datasources/db2i.md
+      parameters:
+      - name: ask
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Immediate question to ask the documentation.
+      - name: goal
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Optional broader end goal for the answer.
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /admin/resources/{resourceid}:
+    get:
+      operationId: get_admin_resources_resourceid
+      tags:
+      - Admin
+      summary: Clouds
+      description: Perform an HTTP GET request on the current page URL with the `ask` query parameter, and the optional `goal` query parameter.
+      x-source: https://docs.strongdm.com/admin/resources/clouds.md
+      parameters:
+      - name: resourceid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: ask
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The immediate question; specific, self‑contained, natural language text.
+      - name: goal
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Optional broader end goal for tailoring the answer.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAdminResourcesResourceidResponse'
+      x-evidence:
+        kind: documentation
+        collapsed_from: 5 example path(s) differing only at resourceId
+components:
+  schemas:
+    GetAdminResourcesResourceidResponse:
+      type: object
+      properties:
+        content:
+          type: string
+          description: The direct answer to the question with relevant excerpts and sources from the documentation.
+  securitySchemes:
+    apiKeyPair:
+      type: apiKey
+      in: header
+      name: Authorization
+      x-source: https://docs.strongdm.com/ (API authentication) and the SDK READMEs
+tags:
+- name: Admin
+security:
+- apiKeyPair: []
