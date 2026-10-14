@@ -15,3 +15,28 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: strongdm-crowdstrike-own
+  label: CrowdStrike (own)
+  partner: crowdstrike
+  partner_name: CrowdStrike (own)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.crowdstrike.com/listings/strongdm-dynamic-access-management/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: strongdm-okta-own
+  label: Okta (own)
+  partner: okta
+  partner_name: Okta (own)
+  category: Single Sign-On
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.okta.com/integrations/strongdm/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
