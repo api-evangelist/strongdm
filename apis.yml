@@ -74,12 +74,11 @@ maintainers:
 apis:
 - name: StrongDM Admin API
   description: >-
-    The StrongDM control-plane API for automating management of resources,
-    accounts, roles, access grants, gateways, relays, secret stores, and audit
-    logs. The transport is gRPC with request signing; StrongDM ships first-party
-    SDKs (Go, Java, Python, Ruby, C#) that wrap it with REST-like ergonomics and
-    handle signing, retries, and pagination. Authentication is an API access key
-    plus secret key generated in the Admin UI.
+    The StrongDM control-plane API for automating management of resources, accounts, roles, access grants,
+    gateways, relays, secret stores, and audit logs. The transport is gRPC with request signing; StrongDM
+    ships first-party SDKs (Go, Java, Python, Ruby, C#) that wrap it with REST-like ergonomics and handle
+    signing, retries, and pagination. Authentication is an API access key plus secret key generated in
+    the Admin UI.
   humanURL: https://docs.strongdm.com/
   baseURL: https://app.strongdm.com
   tags:
@@ -92,6 +91,16 @@ apis:
     url: https://docs.strongdm.com/
   - type: APIReference
     url: https://docs.strongdm.com/
+- aid: strongdm:strongdm-admin-api
+  name: StrongDM Admin API
+  description: The Admin API from StrongDM — 4 operation(s) for admin.
+  humanURL: https://docs.strongdm.com/
+  baseURL: https://app.strongdm.com
+  tags:
+  - Admin
+  properties:
+  - type: OpenAPI
+    url: openapi/strongdm-admin-api-openapi.yml
 common:
 - url: https://discover.strongdm.com/blog/rss.xml
   type: BlogRSS
