@@ -66,3 +66,95 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: strongdm-go-module-proxy
+  label: Go module proxy
+  partner_name: Go module proxy
+  category: official SDK (Go)
+  type: register
+  channel: package-registry
+  evidence: https://pkg.go.dev/github.com/strongdm/strongdm-sdk-go
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: Go module proxy (public registry JSON)
+    spec_file: null
+    language: Go
+    packages:
+    - name: github.com/strongdm/strongdm-sdk-go
+      version: v0.9.40
+      released: '2022-01-25'
+      released_field: Time
+      lapsed: true
+      page: https://pkg.go.dev/github.com/strongdm/strongdm-sdk-go
+      repo_leg: github-org:strongdm
+      publisher_leg: org:strongdm
+      matched_by: github-org
+    current: false
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: strongdm-pypi
+  label: PyPI
+  partner: pypi
+  partner_name: PyPI
+  category: official SDK (Python)
+  type: register
+  channel: package-registry
+  evidence: https://pypi.org/project/strongdm/
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: PyPI (public registry JSON)
+    spec_file: null
+    language: Python
+    packages:
+    - name: strongdm
+      version: 18.4.0
+      released: '2026-10-15'
+      released_field: upload_time
+      lapsed: false
+      page: https://pypi.org/project/strongdm/
+      repo_leg: github-org:strongdm
+      publisher_leg: email:strongdm.com
+      matched_by: domain
+    current: true
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: strongdm-rubygems
+  label: RubyGems
+  partner: rubygems
+  partner_name: RubyGems
+  category: official SDK (Ruby)
+  type: register
+  channel: package-registry
+  evidence: https://rubygems.org/gems/strongdm
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: RubyGems (public registry JSON)
+    spec_file: null
+    language: Ruby
+    packages:
+    - name: strongdm
+      version: 18.4.0
+      released: '2026-10-15'
+      released_field: version_created_at
+      lapsed: false
+      page: https://rubygems.org/gems/strongdm
+      repo_leg: github-org:strongdm
+      publisher_leg: org:strongdm
+      matched_by: github-org
+    current: true
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null

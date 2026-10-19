@@ -2,7 +2,14 @@ generated: '2026-10-14'
 method: searched
 checked:
 - crowdstrike/integrations/crowdstrike-integration-edges.yml
+- https://api.nuget.org/v3
+- https://crates.io/api/v1
 - https://marketplace.atlassian.com/
+- https://proxy.golang.org
+- https://pypi.org/pypi
+- https://registry.npmjs.org
+- https://repo1.maven.org/maven2
+- https://rubygems.org/api/v1
 - microsoft-teams/integrations/microsoft-teams-integration-edges.yml
 - okta/integrations/okta-integration-edges.yml
 - slack/integrations/slack-integration-edges.yml
@@ -104,5 +111,95 @@ edges:
   detected: '2026-10-18'
   detected_by: mirror-platform-listings.py
   category: Slack app
+- partner_name: Go module proxy
+  partner: null
+  partner_match: null
+  type: register
+  direction: provider-built
+  category: official SDK (Go)
+  evidence: https://pkg.go.dev/github.com/strongdm/strongdm-sdk-go
+  channel: package-registry
+  relationship: distribution-channel
+  contract_reference:
+    register: Go module proxy (public registry JSON)
+    spec_file: null
+    language: Go
+    packages:
+    - name: github.com/strongdm/strongdm-sdk-go
+      version: v0.9.40
+      released: '2022-01-25'
+      released_field: Time
+      lapsed: true
+      page: https://pkg.go.dev/github.com/strongdm/strongdm-sdk-go
+      repo_leg: github-org:strongdm
+      publisher_leg: org:strongdm
+      matched_by: github-org
+    current: false
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  detected_by: sweep-official-sdks.py
+  first_seen: '2026-10-18'
+- partner_name: PyPI
+  partner: pypi
+  partner_match: register
+  type: register
+  direction: provider-built
+  category: official SDK (Python)
+  evidence: https://pypi.org/project/strongdm/
+  channel: package-registry
+  relationship: distribution-channel
+  contract_reference:
+    register: PyPI (public registry JSON)
+    spec_file: null
+    language: Python
+    packages:
+    - name: strongdm
+      version: 18.4.0
+      released: '2026-10-15'
+      released_field: upload_time
+      lapsed: false
+      page: https://pypi.org/project/strongdm/
+      repo_leg: github-org:strongdm
+      publisher_leg: email:strongdm.com
+      matched_by: domain
+    current: true
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  detected_by: sweep-official-sdks.py
+  first_seen: '2026-10-18'
+- partner_name: RubyGems
+  partner: rubygems
+  partner_match: register
+  type: register
+  direction: provider-built
+  category: official SDK (Ruby)
+  evidence: https://rubygems.org/gems/strongdm
+  channel: package-registry
+  relationship: distribution-channel
+  contract_reference:
+    register: RubyGems (public registry JSON)
+    spec_file: null
+    language: Ruby
+    packages:
+    - name: strongdm
+      version: 18.4.0
+      released: '2026-10-15'
+      released_field: version_created_at
+      lapsed: false
+      page: https://rubygems.org/gems/strongdm
+      repo_leg: github-org:strongdm
+      publisher_leg: org:strongdm
+      matched_by: github-org
+    current: true
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  detected_by: sweep-official-sdks.py
+  first_seen: '2026-10-18'
 source:
 - https://marketplace.atlassian.com/
