@@ -23,6 +23,7 @@ checked:
 - https://api.first.org/data/v1/teams
 - https://raw.githubusercontent.com/CVEProject/cve-website/dev/src/assets/data/CNAsList.json
 - https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
+- artifact-hub/integrations/artifact-hub-integration-edges.yml
 marketplace_apps: []
 edges:
 - partner_name: Atlassian Marketplace
@@ -132,6 +133,69 @@ edges:
     detected: '2026-10-18'
   detected_by: sweep-official-sdks.py
   first_seen: '2026-10-18'
+- partner_name: Sequoia Capital
+  partner: sequoia-capital
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://sequoiacap.com/companies/strongdm
+  category: vc portfolio participation
+  contract_reference:
+    register: Sequoia Capital companies (sequoiacap.com/companies/<slug>, from the site's sitemap.xml)
+    standard: null
+    spec_file: null
+    role: vc-portfolio-company
+    registered_name: strongDM
+    register_id: https://sequoiacap.com/companies/strongdm
+    register_country: null
+    register_website: https://www.strongdm.com/
+    matched_domain: strongdm.com
+    matched_by: domain
+    signal_note: 'participation only: the venture firm''s own published portfolio lists the company (investment);
+      an ownership and participation record, not conformance or certification'
+    detected_by: sweep-vc-portfolios.py
+    detected: '2026-10-21'
+  detected_by: sweep-vc-portfolios.py
+  first_seen: '2026-10-21'
+- partner_name: CVE Program (CVE Numbering Authorities)
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.cve.org/PartnerInformation/ListofPartners/partner/StrongDM
+  category: Vulnerability disclosure (CVE Numbering Authority)
+  contract_reference:
+    register: CVE Program CNA list (github.com/CVEProject/cve-website CNAsList.json @ 239d3d9b68e0)
+    standard: CVE Program CNA Operational Rules (CVE Numbering Authority)
+    spec_file: null
+    role: cve-numbering-authority
+    registered_name: StrongDM
+    matched_domain: strongdm.com
+    matched_by: domain
+    cna_id: CNA-2023-0019
+    cna_short_name: StrongDM
+    cna_types:
+    - Vendor
+    cna_roles:
+    - CNA
+    scope: StrongDM issues only.
+    top_level_root: MITRE Corporation
+    root: n/a
+    security_advisories:
+    - https://www.strongdm.com/security/advisories
+    disclosure_policy:
+    - https://hackerone.com/strongdm
+    country: USA
+    signal_note: listing as a CVE Numbering Authority = participation (a public commitment to assign CVE IDs and
+      publish advisories for its scope); never a count of CVEs
+    detected_by: sweep-vulnerability-disclosure-cna.py
+    detected: '2026-10-22'
+  detected_by: sweep-vulnerability-disclosure-cna.py
+  first_seen: '2026-10-22'
 - partner_name: CrowdStrike (own)
   partner: crowdstrike
   partner_match: mirror
@@ -230,68 +294,27 @@ edges:
   category: infrastructure-as-code provider registry listing
   badges:
   - Verified publisher (Terraform partner tier)
-- partner_name: Sequoia Capital
-  partner: sequoia-capital
-  partner_match: register
-  type: register
-  channel: standard-directory
-  relationship: standard-participant
-  direction: partner-built
-  evidence: https://sequoiacap.com/companies/strongdm
-  category: vc portfolio participation
-  contract_reference:
-    register: Sequoia Capital companies (sequoiacap.com/companies/<slug>, from the site's sitemap.xml)
-    standard: null
-    spec_file: null
-    role: vc-portfolio-company
-    registered_name: strongDM
-    register_id: https://sequoiacap.com/companies/strongdm
-    register_country: null
-    register_website: https://www.strongdm.com/
-    matched_domain: strongdm.com
-    matched_by: domain
-    signal_note: 'participation only: the venture firm''s own published portfolio lists the company (investment);
-      an ownership and participation record, not conformance or certification'
-    detected_by: sweep-vc-portfolios.py
-    detected: '2026-10-21'
-  detected_by: sweep-vc-portfolios.py
-  first_seen: '2026-10-21'
-- partner_name: CVE Program (CVE Numbering Authorities)
-  partner: null
-  partner_match: register
-  type: register
-  channel: standard-directory
-  relationship: standard-participant
-  direction: partner-built
-  evidence: https://www.cve.org/PartnerInformation/ListofPartners/partner/StrongDM
-  category: Vulnerability disclosure (CVE Numbering Authority)
-  contract_reference:
-    register: CVE Program CNA list (github.com/CVEProject/cve-website CNAsList.json @ 239d3d9b68e0)
-    standard: CVE Program CNA Operational Rules (CVE Numbering Authority)
-    spec_file: null
-    role: cve-numbering-authority
-    registered_name: StrongDM
-    matched_domain: strongdm.com
-    matched_by: domain
-    cna_id: CNA-2023-0019
-    cna_short_name: StrongDM
-    cna_types:
-    - Vendor
-    cna_roles:
-    - CNA
-    scope: StrongDM issues only.
-    top_level_root: MITRE Corporation
-    root: n/a
-    security_advisories:
-    - https://www.strongdm.com/security/advisories
-    disclosure_policy:
-    - https://hackerone.com/strongdm
-    country: USA
-    signal_note: listing as a CVE Numbering Authority = participation (a public commitment to assign CVE IDs and
-      publish advisories for its scope); never a count of CVEs
-    detected_by: sweep-vulnerability-disclosure-cna.py
-    detected: '2026-10-22'
-  detected_by: sweep-vulnerability-disclosure-cna.py
-  first_seen: '2026-10-22'
+- partner_name: Artifact Hub (artifact-hub)
+  partner: artifact-hub
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: artifact-hub
+  evidence: https://artifacthub.io/packages/search?repo=strongdm
+  mirror_of: artifact-hub/integrations/artifact-hub-integration-edges.yml
+  apps:
+  - sdm-relay
+  - sdm-client
+  - sdm-proxy
+  listing_count: 1
+  detected: '2026-10-22'
+  detected_by: mirror-platform-listings.py
+  category: Artifact Hub listing (Helm chart)
+  badges:
+  - 'Verified publisher (Artifact Hub official: publisher owns the software)'
+  - 'Verified publisher (Artifact Hub verified publisher: repository ownership proven)'
 source:
 - https://marketplace.atlassian.com/

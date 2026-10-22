@@ -107,6 +107,70 @@
     detected: '2026-10-18'
   status: not-a-workflow
   arazzo: null
+- slug: strongdm-sequoia-capital
+  label: Sequoia Capital
+  partner: sequoia-capital
+  partner_name: Sequoia Capital
+  category: vc portfolio participation
+  type: register
+  channel: standard-directory
+  evidence: https://sequoiacap.com/companies/strongdm
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: Sequoia Capital companies (sequoiacap.com/companies/<slug>, from the site's sitemap.xml)
+    standard: null
+    spec_file: null
+    role: vc-portfolio-company
+    registered_name: strongDM
+    register_id: https://sequoiacap.com/companies/strongdm
+    register_country: null
+    register_website: https://www.strongdm.com/
+    matched_domain: strongdm.com
+    matched_by: domain
+    signal_note: 'participation only: the venture firm''s own published portfolio lists the company (investment);
+      an ownership and participation record, not conformance or certification'
+    detected_by: sweep-vc-portfolios.py
+    detected: '2026-10-21'
+  status: not-a-workflow
+  arazzo: null
+- slug: strongdm-cve-program-cve-numbering-authorities
+  label: CVE Program (CVE Numbering Authorities)
+  partner_name: CVE Program (CVE Numbering Authorities)
+  category: Vulnerability disclosure (CVE Numbering Authority)
+  type: register
+  channel: standard-directory
+  evidence: https://www.cve.org/PartnerInformation/ListofPartners/partner/StrongDM
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: CVE Program CNA list (github.com/CVEProject/cve-website CNAsList.json @ 239d3d9b68e0)
+    standard: CVE Program CNA Operational Rules (CVE Numbering Authority)
+    spec_file: null
+    role: cve-numbering-authority
+    registered_name: StrongDM
+    matched_domain: strongdm.com
+    matched_by: domain
+    cna_id: CNA-2023-0019
+    cna_short_name: StrongDM
+    cna_types:
+    - Vendor
+    cna_roles:
+    - CNA
+    scope: StrongDM issues only.
+    top_level_root: MITRE Corporation
+    root: n/a
+    security_advisories:
+    - https://www.strongdm.com/security/advisories
+    disclosure_policy:
+    - https://hackerone.com/strongdm
+    country: USA
+    signal_note: listing as a CVE Numbering Authority = participation (a public commitment to assign CVE IDs and
+      publish advisories for its scope); never a count of CVEs
+    detected_by: sweep-vulnerability-disclosure-cna.py
+    detected: '2026-10-22'
+  status: not-a-workflow
+  arazzo: null
 - slug: strongdm-crowdstrike-own
   label: CrowdStrike (own)
   partner: crowdstrike
@@ -171,67 +235,16 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
-- slug: strongdm-sequoia-capital
-  label: Sequoia Capital
-  partner: sequoia-capital
-  partner_name: Sequoia Capital
-  category: vc portfolio participation
-  type: register
-  channel: standard-directory
-  evidence: https://sequoiacap.com/companies/strongdm
+- slug: strongdm-artifact-hub-artifact-hub
+  label: Artifact Hub (artifact-hub)
+  partner: artifact-hub
+  partner_name: Artifact Hub (artifact-hub)
+  category: Artifact Hub listing (Helm chart)
+  type: marketplace
+  marketplace: artifact-hub
+  channel: partner-built
+  evidence: https://artifacthub.io/packages/search?repo=strongdm
   source: edge
-  relationship: standard-participant
-  contract_reference:
-    register: Sequoia Capital companies (sequoiacap.com/companies/<slug>, from the site's sitemap.xml)
-    standard: null
-    spec_file: null
-    role: vc-portfolio-company
-    registered_name: strongDM
-    register_id: https://sequoiacap.com/companies/strongdm
-    register_country: null
-    register_website: https://www.strongdm.com/
-    matched_domain: strongdm.com
-    matched_by: domain
-    signal_note: 'participation only: the venture firm''s own published portfolio lists the company (investment);
-      an ownership and participation record, not conformance or certification'
-    detected_by: sweep-vc-portfolios.py
-    detected: '2026-10-21'
-  status: not-a-workflow
-  arazzo: null
-- slug: strongdm-cve-program-cve-numbering-authorities
-  label: CVE Program (CVE Numbering Authorities)
-  partner_name: CVE Program (CVE Numbering Authorities)
-  category: Vulnerability disclosure (CVE Numbering Authority)
-  type: register
-  channel: standard-directory
-  evidence: https://www.cve.org/PartnerInformation/ListofPartners/partner/StrongDM
-  source: edge
-  relationship: standard-participant
-  contract_reference:
-    register: CVE Program CNA list (github.com/CVEProject/cve-website CNAsList.json @ 239d3d9b68e0)
-    standard: CVE Program CNA Operational Rules (CVE Numbering Authority)
-    spec_file: null
-    role: cve-numbering-authority
-    registered_name: StrongDM
-    matched_domain: strongdm.com
-    matched_by: domain
-    cna_id: CNA-2023-0019
-    cna_short_name: StrongDM
-    cna_types:
-    - Vendor
-    cna_roles:
-    - CNA
-    scope: StrongDM issues only.
-    top_level_root: MITRE Corporation
-    root: n/a
-    security_advisories:
-    - https://www.strongdm.com/security/advisories
-    disclosure_policy:
-    - https://hackerone.com/strongdm
-    country: USA
-    signal_note: listing as a CVE Numbering Authority = participation (a public commitment to assign CVE IDs and
-      publish advisories for its scope); never a count of CVEs
-    detected_by: sweep-vulnerability-disclosure-cna.py
-    detected: '2026-10-22'
+  relationship: platform-app
   status: not-a-workflow
   arazzo: null
